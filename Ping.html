@@ -1,7 +1,38 @@
 <html>
-    <body>
-        <canvas id="folha" width="600" height="500">
+    <body style="background-color: beige;">
+        <canvas id="folha" width="600" height="500"></canvas>
 
-        </canvas>
+        <script>
+            var folhaDesenho = document.getElementById("folha");
+            var areaDesenho = folhaDesenho.getContext("2d");
+
+            var larguraCampo = 600;
+            var alturaCampo = 500;
+            var larguraLinha = 5;
+            var larguraBola = 5;
+            var alturaRaquete = 50;
+
+            areaDesenho.fillStyle = '#286047';
+            //rectangle color
+
+            areaDesenho.fillRect(0, 0, larguraCampo, alturaCampo);
+            //rectangle size (x,y,width,height)
+            
+            areaDesenho.fillStyle = '#ffffff';
+            //midline color
+
+            areaDesenho.fillRect(larguraCampo/2 - larguraLinha/2, 0, larguraLinha, alturaCampo);
+            //midline settings
+
+            areaDesenho.fillRect(0, 30, larguraLinha, alturaRaquete);
+            //racket 1
+
+            areaDesenho.fillRect(larguraCampo - larguraLinha, 30, larguraLinha, alturaRaquete);
+            //racket 2
+            
+            areaDesenho.fillRect(200, 100, larguraBola, larguraBola);
+            //'squared' ball
+
+        </script>
     </body>
 </html>
